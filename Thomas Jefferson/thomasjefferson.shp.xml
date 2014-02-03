@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>The Virginia Department of Forestry</origin>
+				<pubdate>July 2003</pubdate>
+				<title Sync="TRUE">thomasjefferson</title>
+				<geoform Sync="TRUE">vector digital data</geoform>
+				<onlink>http://vdof.org/gis/datadownload.shtml</onlink>
+				<ftname Sync="TRUE">thomasjefferson</ftname></citeinfo>
+		</citation>
+		<descript>
+			<abstract>The Virginia Department of Forestry (VDOF) used GIS to develop a statewide spatial Wildfire Risk Assessment model that aims to: (1) identify areas where conditions are more conducive and favorable to wildfire occurrence and wildfire advancement; (2) identify areas that require closer scrutiny at larger scales; and (3) examine the spatial relationships between areas of relatively high risk and other geographic features of concern such as woodland home communities, fire stations and fire hydrants. This model incorporates data from several other state and federal agencies including land cover, demographics, transportation corridors and topography.  Differences in the relative importance of model variables necessitated the use of three individual analyses broken along Virginia's mountain, piedmont and coastal plain physiographical regions.  The three model results were merged to produce the statewide Wildfire Risk Assessment.</abstract>
+			<purpose>(See abstract)</purpose>
+			<langdata Sync="TRUE">en</langdata></descript>
+		<timeperd>
+			<timeinfo>
+				<sngdate>
+					<caldate>Based on input layers with varying source dates</caldate>
+				</sngdate>
+			</timeinfo>
+			<current>Based on input layers with varying source dates</current>
+		</timeperd>
+		<status>
+			<progress>Complete</progress>
+			<update>None planned</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc Sync="TRUE">-79.172996</westbc>
+				<eastbc Sync="TRUE">-77.676140</eastbc>
+				<northbc Sync="TRUE">38.479895</northbc>
+				<southbc Sync="TRUE">37.523635</southbc>
+			</bounding>
+			<lboundng><leftbc Sync="TRUE">28896.509456</leftbc><rightbc Sync="TRUE">159127.699081</rightbc><bottombc Sync="TRUE">170652.277661</bottombc><topbc Sync="TRUE">275274.507263</topbc></lboundng></spdom>
+		<keywords>
+			<theme>
+				<themekt>None</themekt>
+				<themekey>wildfire</themekey>
+				<themekey>risk assessment</themekey>
+				<themekey>forestry</themekey>
+			</theme>
+			<place>
+				<placekey>Virginia</placekey>
+			</place>
+		</keywords>
+		<accconst>This dataset is to be acquired directly from the Virginia Dept. of Foresty only.  Distributing it to third parties is not permitted.</accconst>
+		<useconst>Use is permitted only after having accepted the Virginia Dept. of Forestry data use agreement and disclaimer for this dataset.</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntperp>
+					<cntper>Alex Zendel or Mindia Brown</cntper>
+					<cntorg>Virginia Department of Forestry</cntorg>
+				</cntperp>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>900 Natural Resources Drive, Suite 800</address>
+					<city>Charlottesville</city>
+					<state>VA</state>
+					<postal>22903</postal>
+				</cntaddr>
+				<cntvoice>(434) 977-6555</cntvoice>
+			</cntinfo>
+		</ptcontac>
+		<datacred>The Virginia Department of Forestry</datacred>
+		<native Sync="TRUE">Microsoft Windows NT Version 4.0 (Build 1381) Service Pack 6; ESRI ArcCatalog 8.2.0.700</native>
+		<natvform Sync="TRUE">Shapefile</natvform></idinfo>
+	<dataqual>
+		<attracc>
+			<attraccr>Maps of the model output were sent to each DOF field office for verification.  Changes were made to the model weights to better reflect the conditions at the local scale</attraccr>
+		</attracc>
+		<complete>None</complete>
+		<posacc>
+			<horizpa>
+				<horizpar>This Wildfire Risk Assessment is meant to be used at county or regional scales; it is not as reliable at the site scale.</horizpar>
+			</horizpa>
+			<vertacc>
+				<vertaccr>Not Applicable</vertaccr>
+			</vertacc>
+		</posacc>
+		<lineage>
+			<srcinfo>
+				<srccontr>The Wildfire Risk Assessment was derived from a GIS analysis of multiple input layers (see below)</srccontr>
+			</srcinfo>
+			<procstep>
+				<procdesc>
+This section describes the data used as input in this model, the organizations from which the various input datasets originated and how these data were prepared for the modeling process.
+
+In 2002 and 2003, VDOF examined which factors influence the occurrence and advancement of wildfires and how these factors could be represented in a GIS model.  VDOF determined that historical fire incidents, land cover (fuels surrogate), topographic characteristics, population density, and distance to roads were critical variables in a wildfire risk analysis.  DOF gathered these data layers, sometimes creating them, and used them in a raster-based weighted aggregate model.
+
+The weights assigned to input variables (specifically topographic variables) differ depending on the physiographic zone being represented because the topographic characteristics of the landscape change dramatically across Virginia.  The Coastal Plain, Piedmont and Mountains physiographic zones were used to clip the input layers during analysis.  Each of the physiographical zones was buffered 2 miles beyond their boundaries to reduce edge effects during the merge process.
+
+The resolution of the model is defined by the coarsest resolution of input data.  The National Land Cover Dataset and National Elevation Dataset both have a spatial resolution of 30-meter pixels, therefore all other layers were created or resampled to this resolution.  Each input layer is normalized on an interval scale from 0 to 10 with 10 representing the characteristics of each layer that have the highest wildfire risk.
+
+MODEL INPUTS
+
+DENSITY OF HISTORICAL WILDFIRES.
+· Premise: Wildfire density was mapped to identify areas where wildfires have historically been relatively prevalent and relatively absent.  It is assumed that these spatial patterns will remain similar in the future.
+· Data Preparation: Point locations for wildfires occurring in the years 1995 - 2001 inclusive were obtained from the George Washington and Jefferson National Forests  and Shenandoah National Park. They were merged with the point wildfire locations documented by VDOF.  Generally, VDOF does not document fires occurring on federal lands and unsuccessful attempts were made to obtain wildfire GIS data from most of the remaining federal agencies that manage land in the Commonwealth.   Using ESRI's Spatial Analyst for ArcView 8.2, a Kernel density function was applied to the point data using a search radius of 5000 meters.  The output grid was reclassified into ten classes using the natural breaks classification method and then assigned an interval value from 1 to 10.
+
+Straddling the border of Lee and Scott Counties is an area of extreme wildfire density that significantly skewed the remaining data in the mountain physiographical zone.  The upper bound values of the density layer were excluded at increasing intervals until the effects caused by the skewed data were reduced to a level that visually appeared more balanced.  The remaining values were classified into 10 natural breaks classes and the cells that were previously excluded were then added to the class with the highest value (10).
+
+LAND COVER
+· Premise: Land Cover data reveal the type of wildfire fuels that are likely to be found in different areas.  The USGS Multi-Resolution Land Cover data were used in this model to identify areas of the state where there are fuel types that ignite more easily, burn with greater intensity and facilitate a greater rate of wildfire advancement.  Fuels data of this resolution and scale have their limitations and the lack of detailed fuel models is commonly recognized as the most prominent limitation in the various types of wildfire risk modeling.  Although some advanced processing of remotely sensed data can be used to estimate canopy crown closure and moisture content, data of these types can rarely divulge the degree of fuel loading within a pixel.
+
+· Data Preparation:  Each fuel type identified by the MRLC data was rated on a 0 to 10 interval scale as follows:
+Water: NoData*
+Low-Intensity Development: 3
+High-Intensity Development: 2
+Hay, Pasture, Grass: 6
+Row Crops: 2
+Probable Row Crops: 3
+Conifer (Evergreen) Forest: 10
+Mixed Forest: 9
+Deciduous Forest: 8
+Woody Wetlands: 2
+Emergent Wetlands: 1
+Barren (Quarry, Coal, Beach): 0
+Barren Transitional (includes clear-cut): 2
+
+* Water was classified as NoData due to the undesirable effect a value of zero would have on the final output.  Because land cover is weighted relatively high, the initial out put would contain very low values over water bodies if the water class was assigned a value of zero.  This effect seems appropriate, but these low values would have a profound and undesired effect on the surrounding areas when the neighborhood function was executed.  Hence, the water class was initially classified as NoData.
+
+PERCENT SLOPE
+· Premise:  Through convective pre-heating, wildfires generally advance up-hill.  Generally, steeper slopes cause greater the pre-heating and ease of ignition.  As a result, steeper slopes were assigned higher values to reflect this effect.
+· Data Preparation: Percent slope was calculated from the U.S. Geological Survey's National Elevation Dataset (30m resolution) using the slope command in command-line ArcInfo.  The resulting slope grid was classified into three classes: 0 - 5%, 6 - 25% and &gt; 25%.  These classes were then assigned values of 1, 5 and 10 respectively.
+
+SLOPE ORIENTATION/ASPECT
+· Premise: Slopes that generally face south receive more direct sunlight than those generally facing north.  Direct sunlight in turn dries fuels and thereby creates conditions that are more conducive to wildfire ignition.  Additionally, drier fuels generally increase the intensity of a wildfire and facilitate faster fire advancement.
+· Data Preparation: Slope aspect was derived from U.S. Geological Survey's National Elevation Dataset using the Aspect command in command-line ArcInfo.  Areas where the slope is less than 5% were assigned values of zero; slopes facing N, NE, and E (0 - 112.5 degrees) were assigned a value of 1; Slopes facing W and NW (247.5 - 337.5 degrees) were assigned a value of 5.  The remaining slopes, S, SE, and SW (112.5 - 247.5 degrees), were assigned values of 10.
+
+POPULATION DENSITY
+· Premise:  Because an overwhelming majority of the wildfires in the Commonwealth are ignited intentionally or unintentionally by humans , population density was included in this model to capture this causal relationship.  The general premise is that as population density increases, more opportunities for wildfire ignition will exist.  But once the density reaches a threshold, the resulting urbanization decreases the presence of wildland fuels. This relative absence of fuels generally produces a negative impact on the wildfire risk.  In order to determine this threshold, a kernel population density grid was produced and visually examined over urbanized areas with which VDOF staff were familiar.  Road layers from VDOT and the US Census Bureau's TIGER datasets were also examined in this threshold determination process.  Then the upper bound population density figures were repeatedly removed in small intervals, producing an expanding no-data "hole" over the urbanized area.  This process was repeated until the hole reasonably encompassed the urbanized areas.
+· Data Preparation: Centroid points were derived from the 2000 US Census Bureau Blocks and the density function of Spatial Analyst was employed to create a kernel population density grid using a 2000 meter search radius and the total population as the population field.  Values in the output grid that were greater than 1500 people per square mile were assigned a value of zero and the remaining cells were then reclassified into ten interval classes ranging in values from 1 to 10 using the quantile classification method.
+
+DISTANCE TO ROADS
+· Premise:  A distance to roads layers was also included to further capture the human/wildfire causal relationship.  Travel corridors increase the probability of human presence which could in turn result in wildfire ignition.  Hence, areas closer to roads will attain a higher ignition probability and these areas were assigned higher values to reflect this increased risk.
+· Data Preparation: Roads features from the US Census Bureau's TIGER data were merged with those provided by the USFS and Shenandoah National Park.  The metadata provided by the USFS did contain attribute information regarding the closure status of the some roads in the land they manage.  However, the roads classified as "closed" were not omitted because the closure devices on publicly managed lands are not always effective, especially with respect to ATVs and motorbikes.  The "Straight Line" distance function was applied to this merged roads layer.   The output grid was then reclassified into 10 interval classes from 1 to 10 using the quantile classification method, with 10 representing areas in closest proximity to roads and 1 representing areas furthest from roads
+
+RAILROAD BUFFER
+· Premise:  Railroad operations can produce sparks that may ignite a wildfire.  However, about 2% of the wildfires occurring in the Commonwealth were reported to have been ignited from railroad use.  As a result, a quarter-mile buffer of Virginia railroads was included, but was weighted low.
+· Data preparation: Using railroad line features from data produced by the Virginia Department of Transportation, a quarter-mile buffer of railroads was generated.  The resulting buffer polygon was directly rasterized and all cells were assigned a value of five.
+
+Below is the weight applied to each input layer in the Mountain, Piedmont and Coastal Plain physiographic zones, respectively:
+Fire Density: 24, 24,	23
+Landcover: 32, 40, 21
+Slope: 9, 4, 13
+Aspect (Slope Orientation): 10, 2, 13
+Population Density: 14, 16, 14
+Distance to Roads: 7, 8, 11
+Railroad Buffer: 4, 6, 5
+
+The output grids retained their buffers where they overlapped one another and were mosaiced together using the Feather Mosaic function of ERDAS Imagine.  To make this process possible, the NoData values were reclassified as zero (no values of zero were present in the individual grids) using a conditional statement in Raster Calculator.  Then the grids were converted to Image (.img) files in ERDAS. Using the physiographical zone boundaries as the "cut line," the Feather Mosaic function assigned the output values of the overlapping input cells using the following algorithm:
+"The overlap area is replaced by a linear interpolation of the pixels in the overlap. A pixel in the middle of the      overlap area [where the cutline was established] is 50% of each of the corresponding pixels in the overlapping     images. A pixel 1/10 of the overlap from an edge would be 90% one image and 10% the other."
+--From ERDAS IMAGINE On-Line Help Copyright (c) 1982-1999 ERDAS, Inc.
+This process virtually eliminates the abrupt transition that would have otherwise occurred where the three physiographical zones meet.  It also establishes an appropriate value based on the overlapping cells' distance from the zone boundaries.  The mosaiced output was then converted back to a grid using ERDAS and all values of zero were calculated back to NoData in Raster Calculator.
+
+Wildfires are not isolated events and fire potential is not solely determined by the conditions found at a single point, but also by the surrounding conditions.  To apply this notion to the raw, mosaiced output, a mean neighborhood function was employed using a circular area with a radius of 250m in Spatial Analyst for ArcView 8.2.  Doing so also generalized the output grid so that it would be more administratively usable.
+
+ROAD DENSITY AND DEVELOPED AREAS
+· Premise: Areas that contain high road densities and a large percentage of developed land generally feature low amounts of wildland fuels.  Furthermore, the wildland fuels that are present are typically fragmented to such a degree that the resulting fire risk is drastically reduced.
+· Data Preparation: A kernel density function was executed on TIGER roads from the US Census Bureau and cells of the resulting grid with high values were classified into a new raster.  If greater than 50% of the cells in these high density areas contained cells classified as "developed" in the USGS MRLC dataset (classes 21, 22 and 23 from above), the value of corresponding cells in the output of the neighborhood function were reduced by 50%.
+
+Road Density and Developed Areas
+· Areas that contain high road densities and a large percentage of developed land generally feature low amounts of wildland fuels.  Furthermore, the wildland fuels that are present are typically fragmented to such a degree that the resulting fire risk is drastically reduced.
+· Data Preparation: A kernel density function was executed on TIGER roads from the US Census Bureau and cells of the resulting grid with high values were classified into a new raster.  If greater than 50% of the cells in these high density areas contained cells classified as "developed" in the USGS MRLC dataset (classes 21, 22 and 23 from above), the value of corresponding cells in the output of the neighborhood function were reduced by 50%.
+
+The final grid was then reclassified into six Jenks/Natural-Breaks classes.  These six classes were then "clumped" into three classes and assigned values of 1 (low), 2 (moderate) and 3 (high).  Finally, this reclassified raster was converted to the shapefile vector format and clipped to each PDC boundary.
+</procdesc>
+			</procstep>
+			<procstep>
+				<procdesc>Metadata imported.</procdesc>
+				<srcused>C:\TEMP\xmlE3.tmp</srcused>
+			</procstep>
+			<procstep><procdesc Sync="TRUE">Metadata imported.</procdesc><srcused Sync="TRUE">C:\TEMP\xml123.tmp</srcused><date Sync="TRUE">20030710</date><time Sync="TRUE">18361400</time></procstep></lineage>
+	</dataqual>
+	<spdoinfo>
+		<direct Sync="TRUE">Vector</direct>
+		<ptvctinf>
+			<sdtsterm Name="thomasjefferson">
+				<sdtstype Sync="TRUE">G-polygon</sdtstype>
+				<ptvctcnt Sync="TRUE">3982</ptvctcnt>
+			</sdtsterm>
+			<esriterm Name="thomasjefferson"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom Sync="TRUE">Polygon</efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">3982</efeacnt><spindex Sync="TRUE">FALSE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<planar>
+				<planci>
+					<plance Sync="TRUE">coordinate pair</plance>
+					<coordrep>
+						<absres Sync="TRUE">0.000256</absres>
+						<ordres Sync="TRUE">0.000256</ordres>
+					</coordrep>
+					<plandu Sync="TRUE">meters</plandu>
+				</planci>
+				<mapproj><mapprojn Sync="TRUE">Lambert Conformal Conic</mapprojn><lambertc><stdparll Sync="TRUE">37.000000</stdparll><stdparll Sync="TRUE">39.500000</stdparll><longcm Sync="TRUE">-79.500000</longcm><latprjo Sync="TRUE">36.000000</latprjo><feast Sync="TRUE">0.000000</feast><fnorth Sync="TRUE">0.000000</fnorth></lambertc></mapproj></planar>
+			<geodetic>
+				<horizdn Sync="TRUE">North American Datum of 1983</horizdn>
+				<ellips Sync="TRUE">Geodetic Reference System 80</ellips>
+				<semiaxis Sync="TRUE">6378137.000000</semiaxis>
+				<denflat Sync="TRUE">298.257222</denflat>
+			</geodetic>
+			<cordsysn><geogcsn Sync="TRUE">GCS_North_American_1983</geogcsn><projcsn Sync="TRUE">USA_Contiguous_Lambert_Conformal_Conic</projcsn></cordsysn></horizsys>
+	</spref>
+	<eainfo>
+		<detailed Name="thomasjefferson">
+			<enttyp>
+				<enttypl Sync="TRUE">thomasjefferson</enttypl>
+				<enttypt Sync="TRUE">Feature Class</enttypt><enttypc Sync="TRUE">3982</enttypc></enttyp>
+			<attr>
+				<attrlabl Sync="TRUE">FID</attrlabl>
+				<attrdef Sync="TRUE">Internal feature number.</attrdef>
+				<attrdefs Sync="TRUE">ESRI</attrdefs>
+				<attrdomv>
+					<udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom>
+				</attrdomv>
+				<attalias Sync="TRUE">FID</attalias><attrtype Sync="TRUE">OID</attrtype><attwidth Sync="TRUE">4</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl Sync="TRUE">Shape</attrlabl>
+				<attrdef Sync="TRUE">Feature geometry.</attrdef>
+				<attrdefs Sync="TRUE">ESRI</attrdefs>
+				<attrdomv>
+					<udom Sync="TRUE">Coordinates defining the features.</udom>
+				</attrdomv>
+				<attalias Sync="TRUE">Shape</attalias><attrtype Sync="TRUE">Geometry</attrtype><attwidth Sync="TRUE">0</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl Sync="TRUE">ID</attrlabl>
+				<attalias Sync="TRUE">ID</attalias><attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">10</attwidth></attr>
+			<attr>
+				<attrlabl Sync="TRUE">GRIDCODE</attrlabl>
+				<attrdomv>
+					<edom>
+						<edomv>0</edomv>
+						<edomvd>None (water)</edomvd>
+					</edom>
+					<edom>
+						<edomv>1</edomv>
+						<edomvd>Low</edomvd>
+					</edom>
+					<edom>
+						<edomv>2</edomv>
+						<edomvd>Moderate</edomvd>
+					</edom>
+					<edom>
+						<edomv>3</edomv>
+						<edomvd>High</edomvd>
+					</edom>
+				</attrdomv>
+				<attalias Sync="TRUE">GRIDCODE</attalias><attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">10</attwidth></attr>
+		</detailed>
+	</eainfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntperp>
+					<cntper>Alex Zendel or Mindia Brown</cntper>
+					<cntorg>Virginia Department of Forestry</cntorg>
+				</cntperp>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>900 Natural Resources Drive</address>
+					<city>Charlottesville</city>
+					<state>VA</state>
+					<postal>22903</postal>
+				</cntaddr>
+				<cntvoice>(434) 977-6555</cntvoice>
+			</cntinfo>
+		</distrib>
+		<resdesc>Downloadable Data</resdesc>
+		<distliab>
+This information is provided with the understanding that it is not guaranteed to be correct or complete and conclusions drawn from such information are the sole responsibility of the user.
+
+While The Virginia Department of Forestry (DOF) has attempted to ensure that this documentation is accurate and reliable, DOF does not assume liability for any damages caused by inaccuracies in these data or documentation, or as a result of the failure of the data or software to function in a particular manner. DOF makes no warranty, express or implied, as to the accuracy, completeness, or utility of this information, nor does the fact of distribution constitute a warranty.
+</distliab>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<formname>ZIP</formname>
+					<filedec>Any windows decompression software, such as WinZip.</filedec>
+					<transize>Varies</transize>
+					<dssize Sync="TRUE">6.639</dssize></digtinfo>
+				<digtopt>
+					<onlinopt>
+						<computer>
+							<networka>
+								<networkr>http://vdof.org/gis/datadownload.shtml</networkr>
+							</networka>
+						</computer>
+					</onlinopt>
+				</digtopt>
+			</digform>
+		</stdorder>
+		<techpreq>Any GIS software that can read ESRI shapefile vector files.</techpreq>
+	</distinfo>
+	<metainfo>
+		<metd Sync="TRUE">20030710</metd>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Virginia Department of Forestry</cntorg>
+					<cntper>Alex Zendel or Mindia Brown</cntper>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>REQUIRED: The mailing and/or physical address for the organization or individual.</addrtype>
+					<city>900 Natural Resources Drive, Ste. 800</city>
+					<state>Virginia</state>
+					<postal>REQUIRED: 22903</postal>
+				</cntaddr>
+				<cntvoice>(434) 977 - 6555</cntvoice>
+			</cntinfo>
+		</metc>
+		<metstdn Sync="TRUE">FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv Sync="TRUE">FGDC-STD-001-1998</metstdv>
+		<mettc Sync="TRUE">local time</mettc>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<langmeta Sync="TRUE">en</langmeta><metextns><onlink Sync="TRUE">http://www.esri.com/metadata/esriprof80.html</onlink><metprof Sync="TRUE">ESRI Metadata Profile</metprof></metextns></metainfo>
+	<Esri><MetaID>{061B9822-B320-11D7-9794-00065B4AB493}</MetaID><CreaDate>20030710</CreaDate><CreaTime>18361400</CreaTime><SyncOnce>FALSE</SyncOnce><SyncDate>20030710</SyncDate><SyncTime>18361700</SyncTime><ModDate>20030710</ModDate><ModTime>18361700</ModTime></Esri><dataIdInfo><envirDesc Sync="TRUE">Microsoft Windows NT Version 4.0 (Build 1381) Service Pack 6; ESRI ArcCatalog 8.2.0.700</envirDesc><dataLang><languageCode Sync="TRUE" value="en"></languageCode></dataLang><idCitation><resTitle Sync="TRUE">thomasjefferson</resTitle><presForm><PresFormCd Sync="TRUE" value="005"></PresFormCd></presForm></idCitation><spatRpType><SpatRepTypCd Sync="TRUE" value="001"></SpatRepTypCd></spatRpType><geoBox esriExtentType="native"><westBL Sync="TRUE">28896.509456</westBL><eastBL Sync="TRUE">159127.699081</eastBL><northBL Sync="TRUE">275274.507263</northBL><southBL Sync="TRUE">170652.277661</southBL><exTypeCode Sync="TRUE">1</exTypeCode></geoBox><geoBox esriExtentType="decdegrees"><westBL Sync="TRUE">-79.172996</westBL><eastBL Sync="TRUE">-77.67614</eastBL><northBL Sync="TRUE">38.479895</northBL><southBL Sync="TRUE">37.523635</southBL><exTypeCode Sync="TRUE">1</exTypeCode></geoBox></dataIdInfo><mdLang><languageCode Sync="TRUE" value="en"></languageCode></mdLang><mdStanName Sync="TRUE">ISO 19115 Geographic Information - Metadata</mdStanName><mdStanVer Sync="TRUE">DIS_ESRI1.0</mdStanVer><mdChar><CharSetCd Sync="TRUE" value="004"></CharSetCd></mdChar><mdHrLv><ScopeCd Sync="TRUE" value="005"></ScopeCd></mdHrLv><mdHrLvName Sync="TRUE">dataset</mdHrLvName><distInfo><distributor><distorTran><onLineSrc><orDesc Sync="TRUE">002</orDesc><linkage Sync="TRUE">file://\\HNFLL01\gis_data\working\Fire\WRA_2003\PDC_Clip\TJefferson\thomasjefferson.shp</linkage><protocol Sync="TRUE">Local Area Network</protocol></onLineSrc><transSize Sync="TRUE">6.639</transSize></distorTran><distorFormat><formatName Sync="TRUE">Shapefile</formatName></distorFormat></distributor></distInfo><refSysInfo><RefSystem><refSysID><identCode Sync="TRUE">USA_Contiguous_Lambert_Conformal_Conic</identCode></refSysID></RefSystem></refSysInfo><spatRepInfo><VectSpatRep><topLvl><TopoLevCd Sync="TRUE" value="001"></TopoLevCd></topLvl><geometObjs Name="thomasjefferson"><geoObjTyp><GeoObjTypCd Sync="TRUE" value="001"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">3982</geoObjCnt></geometObjs></VectSpatRep></spatRepInfo><mdDateSt Sync="TRUE">20030710</mdDateSt></metadata>
